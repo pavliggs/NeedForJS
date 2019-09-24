@@ -1,9 +1,33 @@
+html, body, .game {
+    height: 100%;
+}
+
 .hide {
     display: none;
 }
 
-.car {
+.car, .enemy {
     background: transparent url('./img/player2.png') center / cover no-repeat;
+    bottom: 10px;
     height: 106px;
+    left: 125px;
+    position: absolute;
     width: 50px;
+}
+
+.gameArea {
+    background-color: #222;
+    height: 100%;
+    margin: auto;
+    overflow: hidden; /*убирает scroll на странице*/
+    position: relative;
+    width: 300px;
+}
+
+.line {
+    background-color: #fff;
+    height: 25px;
+    left: 145px;
+    position: absolute;
+    width: 10px;
 }
