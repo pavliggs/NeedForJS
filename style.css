@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i&display=swap&subset=cyrillic-ext');
+
 html, body, .game {
     height: 100%;
+}
+
+body {
+    background-color: #5FA312;
+    overflow: hidden;
 }
 
 .hide {
@@ -8,9 +15,7 @@ html, body, .game {
 
 .car, .enemy {
     background: transparent url('./img/player2.png') center / cover no-repeat;
-    bottom: 10px;
     height: 106px;
-    left: 125px;
     position: absolute;
     width: 50px;
 }
@@ -30,4 +35,101 @@ html, body, .game {
     left: 145px;
     position: absolute;
     width: 10px;
+}
+
+.start-main {
+    background-color: #B22222;
+    border: 2px solid #800000;
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.5);
+    box-sizing: border-box;
+    color: #FFD700;
+    cursor: pointer;
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    margin: 300px auto 0;
+    padding: 50px 0;
+    text-align: center;
+    width: 25%;
+}
+
+.start-gamefield {
+    background-color: #B22222;
+    box-sizing: border-box;
+    color: #FFD700;
+    cursor: pointer;
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+    font-weight: 700;
+    left: 0;
+    line-height: 40px;
+    padding: 25px 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+}
+
+.score {
+    background-color: #B22222;
+    box-sizing: border-box;
+    color: #FFD700;
+    cursor: pointer;
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+    font-weight: 700;
+    left: 0;
+    line-height: 40px;
+    padding: 25px 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.music {
+    position: absolute;
+    top: -200px;
+}
+
+.levels {
+    margin: 300px auto 0;
+    max-width: 60%;
+    text-align: center;
+}
+
+.levels h1 {
+    color: blue;
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    margin-bottom: 100px;
+}
+
+.level-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.light, .medium, .high {
+    background-color: #B22222;
+    border: 2px solid #800000;
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.5);
+    box-sizing: border-box;
+    color: #FFD700;
+    cursor: pointer;
+    flex-basis: 30%;
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    padding: 50px 0;
+    text-align: center;
 }
