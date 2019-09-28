@@ -6,11 +6,16 @@ html, body, .game {
 
 body {
     background-color: #5FA312;
+    color: #FFD700;
     overflow: hidden;
 }
 
 .hide {
     display: none;
+}
+
+.game {
+    position: relative;
 }
 
 .car, .enemy {
@@ -37,87 +42,122 @@ body {
     width: 10px;
 }
 
-.start-main {
-    background-color: #B22222;
-    border: 2px solid #800000;
-    border-radius: 50px;
-    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.5);
-    box-sizing: border-box;
-    color: #FFD700;
-    cursor: pointer;
-    font-family: 'Merriweather', serif;
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 40px;
-    margin: 300px auto 0;
-    padding: 50px 0;
-    text-align: center;
-    width: 25%;
-}
-
 .start-gamefield {
     background-color: #B22222;
     box-sizing: border-box;
-    color: #FFD700;
     cursor: pointer;
     font-family: 'Merriweather', serif;
     font-size: 30px;
     font-weight: 700;
-    left: 0;
+    left: 50%;
     line-height: 40px;
-    padding: 25px 0;
+    padding: 40px 0;
     position: absolute;
     text-align: center;
     top: 0;
-    width: 100%;
-    z-index: 3;
-}
-
-.score {
-    background-color: #B22222;
-    box-sizing: border-box;
-    color: #FFD700;
-    cursor: pointer;
-    font-family: 'Merriweather', serif;
-    font-size: 30px;
-    font-weight: 700;
-    left: 0;
-    line-height: 40px;
-    padding: 25px 0;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    width: 100%;
+    transform: translateX(-50%);
+    width: 300px;
     z-index: 2;
 }
 
-.music {
+.score {
+    box-sizing: border-box;
+    color: #B22222;
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+    font-weight: 700;
+    left: 27%;
+    line-height: 40px;
+    padding: 25px 0;
     position: absolute;
-    top: -200px;
+    text-align: center;
+    top: 0;
+    width: 200px;
+    z-index: 2;
 }
 
-.levels {
+.record-close {
+    background-color: #B22222;
+    box-sizing: border-box;
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+    font-weight: 700;
+    left: 50%;
+    line-height: 40px;
+    padding: 25px 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transform: translateX(-50%);
+    width: 300px;
+    z-index: 2;
+}
+
+.record-const {
+    box-sizing: border-box;
+    left: 10%;
+    padding: 25px 0;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 200px;
+    z-index: 2;
+}
+
+.record-const__text {
+    color: #B22222;
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+
+.record-const__btn {
+    background-color: #B22222;
+    border: 2px solid #800000;
+    border-radius: 50px;
+    color: #FFD700;
+    cursor: pointer;
+    display: block;
+    font-family: 'Merriweather', serif;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0 auto;
+    outline: none;
+    padding: 20px 0;
+    width: 150px;
+}
+
+.start {
     margin: 300px auto 0;
     max-width: 60%;
     text-align: center;
 }
 
-.levels h1 {
-    color: blue;
+.start__text {
+    background-color: #B22222;
+    border: 2px solid #800000;
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.5);
+    box-sizing: border-box;
     font-family: 'Merriweather', serif;
-    font-size: 30px;
+    font-size: 60px;
     font-weight: 700;
-    line-height: 40px;
-    margin-bottom: 100px;
+    line-height: 70px;
+    margin: 0 auto 50px;
+    padding: 30px 0;
+    text-align: center;
+    width: 50%;
 }
 
-.level-block {
+.start__block {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.light, .medium, .high {
+.easy, .medium, .hard {
     background-color: #B22222;
     border: 2px solid #800000;
     border-radius: 50px;
@@ -125,11 +165,37 @@ body {
     box-sizing: border-box;
     color: #FFD700;
     cursor: pointer;
+    display: block;
     flex-basis: 30%;
     font-family: 'Merriweather', serif;
     font-size: 30px;
     font-weight: 700;
     line-height: 40px;
-    padding: 50px 0;
+    outline: none;
+    padding: 30px 0;
     text-align: center;
+}
+
+.play-pause {
+    position: absolute;
+    right: 400px;
+    text-align: center;
+    top: 30px;
+    z-index: 3;
+}
+
+.play-pause__text {
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22px;
+    margin-bottom: 10px;
+}
+
+.play-pause__img {
+    cursor: pointer;
+    display: block;
+    height: 50px;
+    margin: 0 auto;
+    width: 50px;
 }
