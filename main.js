@@ -9,10 +9,12 @@ const score = document.querySelector('.score'),
     newRecordClose = document.querySelector('.record-close'),
     newRecordConst = document.querySelector('.record-const'),
     newRecordConstText = document.querySelector('.record-const__text'),
-    newRecordConstBtn = document.querySelector('.record-const__btn'),
     playPause = document.querySelector('.play-pause'),
     playPauseText = document.querySelector('.play-pause__text'),
-    playPauseImg = document.querySelector('.play-pause__img');
+    playPauseImg = document.querySelector('.play-pause__img'),
+    clearRecordBtn = document.querySelector('.record-block__btn'),
+    recordText = document.querySelector('.record-block__text'),
+    recordBlock = document.querySelector('.record-block');
 
 // добавляем тег audio при помощи конструктора
 const audio = new Audio('./audio.mp3'),
@@ -51,7 +53,23 @@ document.addEventListener('keydown', startRun);
 document.addEventListener('keyup', stopRun);
 playPauseImg.addEventListener('click', pauseGameClick);
 document.addEventListener('keydown', pauseGamePush);
-// newRecordConstBtn.addEventListener('click', clearRecord);
+clearRecordBtn.addEventListener('click', clearRecord);
+
+// проверяем на наличие в хранилище лучшего результата и если его нет, то пишем 0
+if (topScore !== null) {
+    recordText.innerHTML = 'Record<br>' + topScore;
+} else {
+    newRecordConstText.innerHTML = 'Record<br>' + 0;
+}
+
+// при нажатии на кнопку clear удаляем лучший результат
+function clearRecord() {
+    localStorage.clear();
+    if (topScore == null) {
+        newRecordConstText.innerHTML = 'Record<br>' + 0;
+        recordText.innerHTML = 'Record<br>' + 0;
+    }
+}
 
 // функция, которая вычисляет количество элементов, помещающихся на страницу вдоль оси Y
 function getQuantityElements(heightElement) {
@@ -151,6 +169,7 @@ function startGame(event) {
     addGameControl();
     startField.classList.add('hide');
     newRecordClose.classList.add('hide');
+    recordBlock.classList.add('hide');
     gameArea.innerHTML = "";
 
     for (let i = 0; i < getQuantityElements(50) + 1; i++) {
@@ -289,6 +308,7 @@ function moveEnemy() {
                 newRecordClose.classList.remove('hide');
                 newRecordClose.innerHTML = 'Your New Record<br>' + setting.score;
                 newRecordConstText.innerHTML = 'Record<br>' + setting.score;
+                recordText.innerHTML = 'Record<br>' + setting.score;
                 localStorage.setItem('topScore', setting.score);
                 startField.style.top = newRecordClose.offsetHeight + 'px';
 
