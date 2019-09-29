@@ -58,17 +58,16 @@ clearRecordBtn.addEventListener('click', clearRecord);
 // проверяем на наличие в хранилище лучшего результата и если его нет, то пишем 0
 if (topScore !== null) {
     recordText.innerHTML = 'Record<br>' + topScore;
+    newRecordConstText.innerHTML = 'Record<br>' + topScore;
 } else {
-    newRecordConstText.innerHTML = 'Record<br>' + 0;
+    recordText.innerHTML = 'Record<br>' + 0;
 }
 
 // при нажатии на кнопку clear удаляем лучший результат
 function clearRecord() {
     localStorage.clear();
-    if (topScore == null) {
-        newRecordConstText.innerHTML = 'Record<br>' + 0;
-        recordText.innerHTML = 'Record<br>' + 0;
-    }
+    newRecordConstText.innerHTML = 'Record<br>' + 0;
+    recordText.innerHTML = 'Record<br>' + 0;
 }
 
 // функция, которая вычисляет количество элементов, помещающихся на страницу вдоль оси Y
@@ -205,11 +204,14 @@ function startGame(event) {
     car.style.bottom = '10px';
     car.style.left = gameArea.offsetWidth / 2 - car.offsetWidth / 2 + 'px';
     car.style.top = 'auto';
-
-    
-    if (topScore > 0) {
+   
+    topScore = localStorage.getItem('topScore');
+    console.log(topScore);
+    if (topScore !== null) {
         newRecordConstText.innerHTML = 'Record<br>' + topScore;
         newRecordConst.classList.remove('hide');
+    } else {
+        newRecordConstText.innerHTML = 'Record<br>' + 0;
     }
 
     setting.x = car.offsetLeft;
